@@ -34,3 +34,4 @@
 /Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/obj/Debug/net5.0/ref/JwtAuthDemo.dll
 /Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/obj/Debug/net5.0/JwtAuthDemo.pdb
 /Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/obj/Debug/net5.0/JwtAuthDemo.genruntimeconfig.cache
+/Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Newtonsoft.Json.dll

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using JwtAuthDemo.Helpers;
+using JwtAuthDemo.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,6 +39,8 @@ namespace JwtAuthDemo
             });
 
             services.AddSingleton<JwtHelpers>();
+
+            services.Configure<JwtSettings>(Configuration.GetSection("JwtSettings"));
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(options =>
