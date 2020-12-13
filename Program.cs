@@ -18,8 +18,10 @@ namespace JwtAuthDemo
             Log.Logger = new LoggerConfiguration()
                             .MinimumLevel.Debug()
                             .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                            .MinimumLevel.Override("JwtAuthDemo.Controllers.ConfigController", LogEventLevel.Warning)
                             .Enrich.FromLogContext()
                             .WriteTo.Console()
+                            .WriteTo.Seq("http://localhost:5341")
                             .CreateLogger();
             try
             {

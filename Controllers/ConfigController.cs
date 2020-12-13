@@ -22,8 +22,8 @@ namespace JwtAuthDemo.Controllers
             this.JwtSettings = jwtSettings.Value;
         }
 
-        [HttpGet("")]
-        public ActionResult<string> GetSettings()
+        [HttpGet("~/config/v1")]
+        public ActionResult<string> GetSettingsV1()
         {
             logger.LogTrace("Level 1");
             logger.LogDebug("Level 2");
@@ -31,7 +31,20 @@ namespace JwtAuthDemo.Controllers
             logger.LogWarning("Level 4");
             logger.LogError("Level 5");
             logger.LogCritical("Level 6");
-            
+
+            return Ok(this.JwtSettings);
+        }
+
+        [HttpGet("~/config/v2/{id}")]
+        public ActionResult<string> GetSettingsV2(int id)
+        {
+            logger.LogTrace("Level 1: {id}", id);
+            logger.LogDebug("Level 2: {id}", id);
+            logger.LogInformation("Level 3: {id}", id);
+            logger.LogWarning("Level 4: {id}", id);
+            logger.LogError("Level 5: {id}", id);
+            logger.LogCritical("Level 6: {id}", id);
+
             return Ok(this.JwtSettings);
         }
     }
