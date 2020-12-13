@@ -98,6 +98,7 @@ namespace JwtAuthDemo.Controllers
             var refreshTokenFromDb = "ecloudvalley";
             var userInDB = "kevin.tu";
 
+            // 確認身份是否存在後再發行 JWT
             if (User.Identity.Name == userInDB && refreshTokenFromDb == tokenModel.RefreshToken)
             {
                 var result = new LoginResult()

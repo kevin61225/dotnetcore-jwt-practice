@@ -19,6 +19,8 @@ namespace JwtAuthDemo.Controllers
         public ConfigController(ILogger<ConfigController> logger, IOptions<JwtSettings> jwtSettings)
         {
             this.logger = logger;
+
+            // 從 DI Container 取得 IOptions 之內容
             this.JwtSettings = jwtSettings.Value;
         }
 
@@ -38,6 +40,7 @@ namespace JwtAuthDemo.Controllers
         [HttpGet("~/config/v2/{id}")]
         public ActionResult<string> GetSettingsV2(int id)
         {
+            // 使用 StringTemplate 來輸出 Log 為最佳做法
             logger.LogTrace("Level 1: {id}", id);
             logger.LogDebug("Level 2: {id}", id);
             logger.LogInformation("Level 3: {id}", id);

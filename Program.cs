@@ -15,6 +15,7 @@ namespace JwtAuthDemo
     {
         public static void Main(string[] args)
         {
+            // 加入 `Serilog` 並輸出至 console 以及 `Seq`
             Log.Logger = new LoggerConfiguration()
                             .MinimumLevel.Debug()
                             .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
@@ -29,13 +30,14 @@ namespace JwtAuthDemo
             }
             finally
             {
+                // 記得要加入這一行，不然會發生 log 的最後一行沒輸出之問題 
                 Log.CloseAndFlush();
             }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
                 Host.CreateDefaultBuilder(args)
-                    .UseSerilog()
+                    .UseSerilog() // 於 WebHost 建立前先啟動 Log 機制
                     .ConfigureWebHostDefaults(webBuilder =>
                     {
                         webBuilder.UseStartup<Startup>();

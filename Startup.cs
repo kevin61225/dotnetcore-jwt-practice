@@ -38,10 +38,14 @@ namespace JwtAuthDemo
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "JwtAuthDemo", Version = "v1" });
             });
 
+            // 加入 JWT Helper 服務供使用
             services.AddSingleton<JwtHelpers>();
 
+            // 加入 JWT 組態設定並 Map 至 `JwtSettings` 做成強型別
+            // 後續於 Controller 時使用 `IOptions<JwtSetting>` 取得內容
             services.Configure<JwtSettings>(Configuration.GetSection("JwtSettings"));
-
+            
+            // 加入 JWT 驗證機制
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     .AddJwtBearer(options =>
                     {
@@ -90,7 +94,10 @@ namespace JwtAuthDemo
 
             app.UseRouting();
 
+            // 先驗證身份
             app.UseAuthentication();
+
+            // 再檢查授權
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
