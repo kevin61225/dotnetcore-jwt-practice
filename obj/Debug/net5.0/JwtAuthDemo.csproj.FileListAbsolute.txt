@@ -35,3 +35,14 @@
 /Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/obj/Debug/net5.0/JwtAuthDemo.pdb
 /Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/obj/Debug/net5.0/JwtAuthDemo.genruntimeconfig.cache
 /Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Newtonsoft.Json.dll
+/Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Microsoft.DotNet.PlatformAbstractions.dll
+/Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Microsoft.Extensions.DependencyModel.dll
+/Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Serilog.dll
+/Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Serilog.AspNetCore.dll
+/Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Serilog.Extensions.Hosting.dll
+/Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Serilog.Extensions.Logging.dll
+/Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Serilog.Formatting.Compact.dll
+/Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Serilog.Settings.Configuration.dll
+/Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Serilog.Sinks.Console.dll
+/Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Serilog.Sinks.Debug.dll
+/Users/kevintu/Desktop/打內寇爾實戰/範例程式碼/JwtAuthDemo/bin/Debug/net5.0/Serilog.Sinks.File.dll
