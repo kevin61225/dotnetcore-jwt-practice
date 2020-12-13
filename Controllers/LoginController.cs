@@ -27,7 +27,7 @@ namespace JwtAuthDemo.Controllers
         [HttpPost("~/signin")]
         public IActionResult SignIn(LoginViewModel loginModel)
         {
-            var userId = "ecv6689";
+            var userId = "some.id.here";
             var result = new LoginResult()
             {
                 Token = jwtHelper.GenerateToken(loginModel.UserName, userId)
@@ -44,9 +44,16 @@ namespace JwtAuthDemo.Controllers
 
         private bool ValidateUser(LoginViewModel loginModel)
         {
-            return true; // TODO
+            /* TODO: Do validation here
+             *       You can check if the user is valid or not via Database or other authentication APIs    
+             */
+            return true; 
         }
 
+        /// <summary>
+        /// Return  all items from `User.Claims`
+        /// </summary>
+        /// <returns>Items from `User.Claims`</returns>
         [Authorize]
         [HttpGet("~/claims")]
         public IActionResult GetClaims()
@@ -54,6 +61,10 @@ namespace JwtAuthDemo.Controllers
             return Ok(User.Claims.Select(p => new { p.Type, p.Value }));
         }
 
+        /// <summary>
+        /// Get user name from `User.Identity`
+        /// </summary>
+        /// <returns></returns>
         [Authorize]
         [HttpGet("~/username")]
         public IActionResult GetUserName()
@@ -62,6 +73,11 @@ namespace JwtAuthDemo.Controllers
             return Ok(result);
         }
 
+        
+        /// <summary>
+        /// Get JWT Id from `User.Claims`
+        /// </summary>
+        /// <returns>JWT Id</returns>
         [Authorize]
         [HttpGet("~/jwtid")]
         public IActionResult GetUniqueId()
@@ -70,6 +86,11 @@ namespace JwtAuthDemo.Controllers
             return Ok(jti.Value);
         }
 
+        /// <summary>
+        /// Get a new token based on existed JWT
+        /// </summary>
+        /// <param name="RefreshToken">RefreshToken</param>
+        /// <returns>a new JWT token</returns>
         [Authorize]
         [HttpPost("~/refresh-token")]
         public IActionResult RefreshToken(RefreshTokenViewModel tokenModel)
